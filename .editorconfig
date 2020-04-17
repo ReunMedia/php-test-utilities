@@ -1,0 +1,26 @@
+#
+# Reun Media EditorConfig.
+#
+# @author Kimmo Salmela <kimmo.salmela@reun.eu>
+# @copyright 2020 Reun Media
+#
+# @see https://gitlab.com/reun/webdev/generator-reun-webapp
+#
+# @version 1.0.0
+#
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[composer.json]
+indent_size = 4

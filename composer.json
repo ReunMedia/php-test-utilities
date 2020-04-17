@@ -1,0 +1,40 @@
+{
+    "name": "reun/test-utilities",
+    "description": "",
+    "type": "library",
+    "license": "Proprietary",
+    "authors": [
+        {
+            "name": "Reun Media",
+            "email": "company@reun.eu"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Reun\\TestUtilities\\": "src/Reun/TestUtilities",
+            "Reun\\TestUtilities\\Tests\\": "tests/phpunit",
+            "ReunLib\\": "src/ReunLib"
+        }
+    },
+    "require-dev": {
+        "codeception/specify": "^1.3",
+        "doctrine/orm": "^2.7",
+        "phpunit/phpunit": "^9.1",
+        "psr/http-message": "^1.0",
+        "slim/psr7": "^1.0"
+    },
+    "require": {
+        "php": "^7.4"
+    },
+    "scripts": {},
+    "suggest": {
+        "codeception/specify": "For BDD style tests",
+        "doctrine/orm": "For testing Doctrine repositories",
+        "slim/psr7": "For testing PSR-7 handlers",
+        "phpunit/phpunit": "For actual testing code",
+        "psr/http-message": "For testing PSR-7 handlers"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

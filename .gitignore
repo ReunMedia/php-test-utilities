@@ -1,0 +1,24 @@
+#
+# Reun Media .gitignore.
+#
+# @author Kimmo Salmela <kimmo.salmela@reun.eu>
+# @copyright 2020 Reun Media
+#
+# @see https://gitlab.com/reun/webdev/generator-reun-webapp
+#
+# @version 1.0.0
+#
+
+/_*
+/.vscode
+/coverage
+/nbproject
+/node_modules
+/vendor
+/.env*
+!/.env.example
+*.log
+.phpunit.result.cache
+**/_temp/**
+www/static/**/dist/**
+www/static/uploads

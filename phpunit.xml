@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Reun Media PHPUnit configuration
+
+  @author Kimmo Salmela <kimmo.salmela@reun.eu>
+  @copyright 2020 Reun Media
+
+  @see https://gitlab.com/reun/webdev/generator-reun-webapp
+
+  @version 1.0.0
+-->
+
+<phpunit bootstrap="vendor/autoload.php" colors="true" forceCoversAnnotation="true">
+  <testsuites>
+    <testsuite name="tests">
+      <directory>./tests/phpunit</directory>
+      <directory suffix=".test.php">./src</directory>
+    </testsuite>
+  </testsuites>
+  <filter>
+    <whitelist processUncoveredFilesFromWhitelist="true">
+      <directory suffix=".php">./src</directory>
+    </whitelist>
+  </filter>
+  <logging>
+    <log type="coverage-html" target="_coverage" lowUpperBound="30" highLowerBound="70" />
+  </logging>
+</phpunit>
