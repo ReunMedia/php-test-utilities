@@ -4,35 +4,31 @@ declare(strict_types=1);
 
 namespace Reun\TestUtilities;
 
-use Doctrine\Common\Annotations\AnnotationRegistry;
-use Doctrine\DBAL\Logging\EchoSQLLogger;
+use Doctrine\DBAL\DriverManager;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\ORMSetup;
 use Doctrine\ORM\Tools\SchemaTool;
-use Doctrine\ORM\Tools\Setup;
 
 class Doctrine
 {
     public static function createEntityManager(
         array $withSchemaClasses = [],
-        array $connection = ["url" => "sqlite:///:memory:"],
+        array $connection = [
+            "driver" => "sqlite3",
+            "memory" => true,
+        ],
+        array $paths = ["../../../src/"],
         bool $recreateSchema = true,
-        bool $logging = false
     ): EntityManagerInterface {
-        // Initialize AnnotationRegistry loader
-        AnnotationRegistry::registerLoader("class_exists");
+        $connection = DriverManager::getConnection($connection);
 
-        $paths = ["../../../src/"];
-        $config = Setup::createAnnotationMetadataConfiguration(
+        $doctrineConfig = ORMSetup::createAttributeMetadataConfiguration(
             $paths,
-            true,
-            null,
-            null,
-            false
+            true
         );
-        $logging && $config->setSQLLogger(new EchoSQLLogger());
 
-        $em = EntityManager::create($connection, $config);
+        $em = new EntityManager($connection, $doctrineConfig);
 
         if ($withSchemaClasses) {
             $schemaTool = new SchemaTool($em);
