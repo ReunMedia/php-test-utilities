@@ -12,18 +12,19 @@ use PHPUnit\Framework\TestCase;
  * @internal
  *
  * @group integration
+ *
  * @covers \Reun\TestUtilities\Doctrine
  */
 final class DoctrineTest extends TestCase
 {
-  use Specify;
+    use Specify;
 
-  public function testCreateEntityManager(): void
-  {
-    $this->it("should create a configured EntityManager", function () {
-      $em = Doctrine::createEntityManager();
+    public function testCreateEntityManager(): void
+    {
+        $this->it("should create a configured EntityManager", function () {
+            $em = Doctrine::createEntityManager();
 
-      $this->assertInstanceOf(EntityManagerInterface::class, $em);
-    });
-  }
+            $this->assertInstanceOf(EntityManagerInterface::class, $em);
+        });
+    }
 }
