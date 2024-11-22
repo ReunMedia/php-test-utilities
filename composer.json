@@ -16,6 +16,7 @@
         "codeception/specify": "^2.0",
         "doctrine/orm": "^3.2",
         "ergebnis/composer-normalize": "^2.44",
+        "friendsofphp/php-cs-fixer": "^3.64",
         "phpunit/phpunit": "^9.6",
         "psr/http-message": "^1.1",
         "psr/http-server-handler": "^1.0",
@@ -46,7 +47,8 @@
     "scripts": {
         "lint": [
             "composer validate",
-            "composer normalize"
+            "composer normalize",
+            "vendor/bin/php-cs-fixer fix ."
         ],
         "test": "./vendor/bin/phpunit"
     }
