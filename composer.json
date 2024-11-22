@@ -26,13 +26,10 @@
         "symfony/cache": "^7.1"
     },
     "suggest": {
-        "codeception/specify": "For BDD style tests",
         "doctrine/orm": "For testing Doctrine repositories",
-        "phpunit/phpunit": "For actual testing code",
         "psr/http-message": "For testing PSR-7 handlers",
         "psr/http-server-handler": "Required for PsrHttp utility",
-        "slim/psr7": "For testing PSR-7 handlers",
-        "symfony/cache": "Required by Doctrine utility"
+        "slim/psr7": "For testing PSR-7 handlers"
     },
     "autoload": {
         "psr-4": {
