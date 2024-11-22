@@ -68,10 +68,13 @@ class PsrHttp implements RequestHandlerInterface
         string $uri,
         array $data = []
     ): ServerRequestInterface {
+        $json = \json_encode($data);
+        $json = false !== $json ? $json : "";
+
         return $this->createRequest(
             $method,
             $uri,
-            \json_encode($data),
+            $json,
             ["Content-Type" => "application/json"]
         );
     }
