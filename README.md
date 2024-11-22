@@ -2,13 +2,7 @@
 
 ## Installation
 
-1. Add private package as VCS repository to your project
-
-```sh
-composer config repositories.reun/test-utilities vcs git@github.com:Reun-Media/php-test-utilities.git
-```
-
-2. Install package using Composer
+Install package using Composer
 
 ```sh
 composer require --dev reun/test-utilities
@@ -16,7 +10,9 @@ composer require --dev reun/test-utilities
 
 ## Usage
 
-TODO - Write usage instructions.
+See individual utility classes in
+[src/Reun/TestUtilites](src/Reun/TestUtilities).
 
 ## Running tests
+
 `composer test`
