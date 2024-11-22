@@ -7,6 +7,9 @@ namespace Reun\TestUtilities;
 use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Utilites to enhance mocks.
+ */
 class MockUtilities
 {
     /**

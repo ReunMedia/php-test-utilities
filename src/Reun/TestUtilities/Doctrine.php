@@ -11,6 +11,8 @@ use Doctrine\ORM\ORMSetup;
 use Doctrine\ORM\Tools\SchemaTool;
 
 /**
+ * Doctrine testing utilites.
+ *
  * @phpstan-import-type Params from DriverManager
  */
 class Doctrine
