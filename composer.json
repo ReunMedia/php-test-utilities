@@ -17,6 +17,8 @@
         "doctrine/orm": "^3.2",
         "ergebnis/composer-normalize": "^2.44",
         "friendsofphp/php-cs-fixer": "^3.64",
+        "phpstan/phpstan": "^2.0",
+        "phpstan/phpstan-strict-rules": "^2.0",
         "phpunit/phpunit": "^9.6",
         "psr/http-message": "^1.1",
         "psr/http-server-handler": "^1.0",
@@ -48,7 +50,8 @@
         "lint": [
             "composer validate",
             "composer normalize",
-            "vendor/bin/php-cs-fixer fix ."
+            "vendor/bin/php-cs-fixer fix .",
+            "vendor/bin/phpstan"
         ],
         "test": "./vendor/bin/phpunit"
     }
