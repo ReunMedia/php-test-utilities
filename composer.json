@@ -12,8 +12,7 @@
     "autoload": {
         "psr-4": {
             "Reun\\TestUtilities\\": "src/Reun/TestUtilities",
-            "Reun\\TestUtilities\\Tests\\": "tests/phpunit",
-            "ReunLib\\": "src/ReunLib"
+            "Reun\\TestUtilities\\Tests\\": "tests/phpunit"
         }
     },
     "require-dev": {
