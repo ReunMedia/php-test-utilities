@@ -1,45 +1,53 @@
 {
     "name": "reun/test-utilities",
     "description": "",
-    "type": "library",
     "license": "Proprietary",
+    "type": "library",
     "authors": [
         {
             "name": "Reun Media",
             "email": "company@reun.eu"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "Reun\\TestUtilities\\": "src/Reun/TestUtilities",
-            "Reun\\TestUtilities\\Tests\\": "tests/phpunit"
-        }
+    "require": {
+        "php": "^8.3"
     },
     "require-dev": {
         "codeception/specify": "^2.0",
         "doctrine/orm": "^3.2",
+        "ergebnis/composer-normalize": "^2.44",
         "phpunit/phpunit": "^9.6",
         "psr/http-message": "^1.1",
         "psr/http-server-handler": "^1.0",
         "slim/psr7": "^1.7",
         "symfony/cache": "^7.1"
     },
-    "require": {
-        "php": "^8.3"
-    },
     "suggest": {
         "codeception/specify": "For BDD style tests",
         "doctrine/orm": "For testing Doctrine repositories",
-        "slim/psr7": "For testing PSR-7 handlers",
         "phpunit/phpunit": "For actual testing code",
         "psr/http-message": "For testing PSR-7 handlers",
         "psr/http-server-handler": "Required for PsrHttp utility",
+        "slim/psr7": "For testing PSR-7 handlers",
         "symfony/cache": "Required by Doctrine utility"
     },
+    "autoload": {
+        "psr-4": {
+            "Reun\\TestUtilities\\": "src/Reun/TestUtilities",
+            "Reun\\TestUtilities\\Tests\\": "tests/phpunit"
+        }
+    },
     "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
+        },
         "sort-packages": true
     },
     "scripts": {
+        "lint": [
+            "composer validate",
+            "composer normalize"
+        ],
         "test": "./vendor/bin/phpunit"
     }
 }
