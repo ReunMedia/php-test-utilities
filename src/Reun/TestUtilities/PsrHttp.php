@@ -12,6 +12,10 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Slim\Psr7\Factory\ResponseFactory;
 use Slim\Psr7\Factory\ServerRequestFactory;
 
+/**
+ * Dummy request handler for PSR HTTP testing with utility methods to create
+ * request objects.
+ */
 class PsrHttp implements RequestHandlerInterface
 {
     private ResponseFactoryInterface $responseFactory;
@@ -26,6 +30,14 @@ class PsrHttp implements RequestHandlerInterface
         $this->serverRequestFactory = $serverRequestFactory ?? new ServerRequestFactory();
     }
 
+    /**
+     * Creates a request object with a specific body.
+     *
+     * @param string $method  Request method
+     * @param string $uri     Request URI
+     * @param string $body    Request body
+     * @param array  $headers Request headers
+     */
     public function createRequest(
         string $method,
         string $uri,
@@ -44,6 +56,13 @@ class PsrHttp implements RequestHandlerInterface
         return $request;
     }
 
+    /**
+     * Creates a JSON request from a data array.
+     *
+     * @param string $method Request method
+     * @param string $uri    Request URI
+     * @param array  $data   Data to encode as JSON
+     */
     public function createJsonRequest(
         string $method,
         string $uri,

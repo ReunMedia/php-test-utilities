@@ -12,6 +12,15 @@ use Doctrine\ORM\Tools\SchemaTool;
 
 class Doctrine
 {
+    /**
+     * Create an in-memory SQLite EntityManager with specified classes.
+     *
+     * @param array $withSchemaClasses Entity classes that the EM manages
+     * @param array $connection        Doctrine connection parameters
+     * @param array $paths             Paths to entitites
+     * @param bool  $recreateSchema    If true, forces recreation of the DB
+     *                                 schema
+     */
     public static function createEntityManager(
         array $withSchemaClasses = [],
         array $connection = [
