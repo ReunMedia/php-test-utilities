@@ -6,11 +6,9 @@
  * @author Reun Media <company@reun.eu>
  * @copyright 2020-2024 Reun Media
  *
- * @see https://github.com/Reun-Media/project-templates/blob/master/base/webdev/php/.php-cs-fixer.php
+ * @see https://github.com/Reun-Media/php-app-template
  *
- * @version 3.0.0
- *
- * @since 2024-06-13 Last modification date
+ * @version 3.0.3
  */
 
 declare(strict_types=1);
