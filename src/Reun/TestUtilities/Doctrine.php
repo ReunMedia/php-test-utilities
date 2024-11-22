@@ -10,16 +10,19 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\ORMSetup;
 use Doctrine\ORM\Tools\SchemaTool;
 
+/**
+ * @phpstan-import-type Params from DriverManager
+ */
 class Doctrine
 {
     /**
      * Create an in-memory SQLite EntityManager with specified classes.
      *
-     * @param array $withSchemaClasses Entity classes that the EM manages
-     * @param array $connection        Doctrine connection parameters
-     * @param array $paths             Paths to entitites
-     * @param bool  $recreateSchema    If true, forces recreation of the DB
-     *                                 schema
+     * @param array<class-string|string> $withSchemaClasses Entity classes that the EM manages
+     * @param Params                     $connection        Doctrine connection parameters
+     * @param array<string>              $paths             Paths to entitites
+     * @param bool                       $recreateSchema    If true, forces recreation of the DB
+     *                                                      schema
      */
     public static function createEntityManager(
         array $withSchemaClasses = [],
@@ -39,7 +42,7 @@ class Doctrine
 
         $em = new EntityManager($connection, $doctrineConfig);
 
-        if ($withSchemaClasses) {
+        if ([] !== $withSchemaClasses) {
             $schemaTool = new SchemaTool($em);
             $classesMetadata = [];
             foreach ($withSchemaClasses as $classname) {

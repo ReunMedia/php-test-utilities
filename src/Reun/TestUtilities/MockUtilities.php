@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Reun\TestUtilities;
 
+use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
 
 class MockUtilities
 {
-    public static function &mockArrayAccess($mock, array &$storage): array
+    /**
+     * @param array<mixed> $storage
+     *
+     * @return array<mixed>
+     */
+    public static function &mockArrayAccess(Stub $mock, array &$storage): array
     {
         $mock->method("offsetExists")
             ->will(TestCase::returnCallback(function ($key) use (&$storage) {

@@ -33,10 +33,10 @@ class PsrHttp implements RequestHandlerInterface
     /**
      * Creates a request object with a specific body.
      *
-     * @param string $method  Request method
-     * @param string $uri     Request URI
-     * @param string $body    Request body
-     * @param array  $headers Request headers
+     * @param string               $method  Request method
+     * @param string               $uri     Request URI
+     * @param string               $body    Request body
+     * @param array<string,string> $headers Request headers
      */
     public function createRequest(
         string $method,
@@ -59,9 +59,9 @@ class PsrHttp implements RequestHandlerInterface
     /**
      * Creates a JSON request from a data array.
      *
-     * @param string $method Request method
-     * @param string $uri    Request URI
-     * @param array  $data   Data to encode as JSON
+     * @param string       $method Request method
+     * @param string       $uri    Request URI
+     * @param array<mixed> $data   Data to encode as JSON
      */
     public function createJsonRequest(
         string $method,
