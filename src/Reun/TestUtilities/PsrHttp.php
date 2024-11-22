@@ -23,8 +23,8 @@ class PsrHttp implements RequestHandlerInterface
     private ServerRequestFactoryInterface $serverRequestFactory;
 
     public function __construct(
-        ResponseFactoryInterface $responseFactory = null,
-        ServerRequestFactoryInterface $serverRequestFactory = null
+        ?ResponseFactoryInterface $responseFactory = null,
+        ?ServerRequestFactoryInterface $serverRequestFactory = null
     ) {
         $this->responseFactory = $responseFactory ?? new ResponseFactory();
         $this->serverRequestFactory = $serverRequestFactory ?? new ServerRequestFactory();
