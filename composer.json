@@ -1,12 +1,17 @@
 {
     "name": "reun/test-utilities",
-    "description": "",
+    "description": "Various PHP testing utilities",
     "license": "Proprietary",
     "type": "library",
     "authors": [
         {
+            "name": "Kimmo Salmela",
+            "email": "kimmo.salmela@reun.eu"
+        },
+        {
             "name": "Reun Media",
-            "email": "company@reun.eu"
+            "email": "company@reun.eu",
+            "homepage": "https://reun.eu"
         }
     ],
     "require": {
