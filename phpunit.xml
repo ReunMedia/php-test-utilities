@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Reun Media PHPUnit configuration
+  Reun Media PHPUnit configuration for Pest
 
-  @author Kimmo Salmela <kimmo.salmela@reun.eu>
+  Run `./vendor/bin/pest \-\-generate-configuration` to create a new file with
+  default configuration.
+
   @copyright 2020 Reun Media
 
-  @see https://gitlab.com/reun/webdev/generator-reun-webapp
+  @see https://github.com/Reun-Media/php-app-template
 
-  @version 1.0.0
+  @version 3.0.1
 -->
 
-<phpunit bootstrap="vendor/autoload.php" colors="true" forceCoversAnnotation="true">
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.3/phpunit.xsd"
+  bootstrap="vendor/autoload.php"
+  colors="true">
   <testsuites>
-    <testsuite name="tests">
-      <directory>./tests/phpunit</directory>
-      <directory suffix=".test.php">./src</directory>
+    <testsuite name="Test Suite">
+      <directory suffix="Test.php">tests</directory>
     </testsuite>
   </testsuites>
-  <filter>
-    <whitelist processUncoveredFilesFromWhitelist="true">
-      <directory suffix=".php">./src</directory>
-    </whitelist>
-  </filter>
-  <logging>
-    <log type="coverage-html" target="_coverage" lowUpperBound="30" highLowerBound="70" />
-  </logging>
+  <source>
+    <include>
+      <directory suffix=".php">src</directory>
+    </include>
+  </source>
+  <coverage pathCoverage="true">
+    <report>
+      <html outputDirectory="_phpunit/coverage-report-html"
+        lowUpperBound="30"
+        highLowerBound="70" />
+    </report>
+  </coverage>
 </phpunit>
