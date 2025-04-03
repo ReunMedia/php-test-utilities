@@ -27,7 +27,7 @@ First public release.
 
 Initial release.
 
-[0.4.0]: https://github.com/Reun-Media/php-test-utilities/releases/tag/0.4.0
-[0.3.0]: https://github.com/Reun-Media/php-test-utilities/releases/tag/0.3.0
-[0.2.0]: https://github.com/Reun-Media/php-test-utilities/releases/tag/0.2.0
-[0.1.0]: https://github.com/Reun-Media/php-test-utilities/releases/tag/0.1.0
+[0.4.0]: https://github.com/ReunMedia/php-test-utilities/releases/tag/0.4.0
+[0.3.0]: https://github.com/ReunMedia/php-test-utilities/releases/tag/0.3.0
+[0.2.0]: https://github.com/ReunMedia/php-test-utilities/releases/tag/0.2.0
+[0.1.0]: https://github.com/ReunMedia/php-test-utilities/releases/tag/0.1.0
